@@ -9,9 +9,10 @@ class UserCreate(BaseModel):
 class UserResponse(BaseModel):
     id: int
     nickname: str
-    uma: int
-    game_count: int
     created_at: datetime
+    model_config = {
+        "from_attributes": True
+    }
 
 # 유저 닉네임 변경
 class UserUpdate(BaseModel):
